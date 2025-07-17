@@ -1,18 +1,66 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A Beautiful Gift</title>
+  <title>🎁 A Special Gift</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .gift-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff4081;
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #333;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">🎁 A Beautiful Thought</h1>
-    <p class="gift">
-      "You are not just a girl, you're a beautiful moment in someone's life. 🌸"<br><br>
-      Stay the way you are—kind, bright, and incredibly special.
-    </p>
-    <a href="index.html" class="back-btn">⬅ Back</a>
+  <div class="gift-container">
+    <h1>🎁 A Special Gift For You</h1>
+
+    <div class="video-grid">
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video controls>
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video controls>
+        <source src="video3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <p>তর জন্য এর চাইতে ভালো Gift পাইলাম না 😁</p>
   </div>
 </body>
 </html>
+
