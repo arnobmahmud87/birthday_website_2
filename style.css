@@ -127,3 +127,33 @@ canvas#fireworks {
   height: 100vh;
   pointer-events: none;
 }
+body {
+  cursor: url('https://cdn-icons-png.flaticon.com/512/60/60510.png'), auto;
+}
+.animated-text {
+  overflow: hidden;
+  border-right: .15em solid pink;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  font-size: 1.2em;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent }
+  50% { border-color: pink; }
+}
+#age-counter h2 {
+  font-size: 2.5em;
+  color: #ff4081;
+  margin-bottom: 10px;
+}
+#age {
+  font-size: 1.5em;
+  color: #333;
+}
+
