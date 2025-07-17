@@ -20,12 +20,102 @@
       <a href="gift.html" class="btn">🎁 A Beautiful Gift</a>
     </div>
   </div>
-  <p class="typewriter-text">Wishing you a day full of love, laughter, and <span class="heart">❤️</span></p>
+  
   <canvas id="fireworks"></canvas>
 <script src="script.js"></script>
 <canvas id="fireworks"></canvas>
 <script src="script.js"></script>
 
 
+<div id="age-counter" style="text-align:center; font-family: Arial, sans-serif; margin-top: 50px;">
+  <h2>Your Age</h2>
+  <p id="age">Calculating...</p>
+</div>
+
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Age Calculator</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe5ec, #ffc2d1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #age-container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      font-size: 2em;
+      color: #ff2e63;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      color: #222;
+    }
+    span {
+      font-weight: bold;
+      color: #d63384;
+    }
+  </style>
+</head>
+<body>
+  
+  <script>
+    function calculateDetailedAge(birthDate) {
+      const now = new Date();
+      let years = now.getFullYear() - birthDate.getFullYear();
+      let months = now.getMonth() - birthDate.getMonth();
+      let days = now.getDate() - birthDate.getDate();
+
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      // Total calculations
+      const diffMs = now - birthDate;
+      const totalSeconds = Math.floor(diffMs / 1000);
+      const totalMinutes = Math.floor(totalSeconds / 60);
+      const totalHours = Math.floor(totalMinutes / 60);
+
+      const formatted = `<span>${years}</span> years, <span>${months}</span> months, <span>${days}</span> days<br>
+        <span>${totalHours.toLocaleString()}</span> hours<br>
+        <span>${totalMinutes.toLocaleString()}</span> minutes<br>
+        <span>${totalSeconds.toLocaleString()}</span> seconds`;
+
+      return formatted;
+    }
+
+    function updateAge() {
+      const birthDate = new Date(2009, 6, 18); // July 18, 2009 (month is 0-based)
+      document.getElementById("age").innerHTML = calculateDetailedAge(birthDate);
+    }
+
+    updateAge();
+    setInterval(updateAge, 1000); // Update every second
+  </script>
 </body>
 </html>
